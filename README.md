@@ -5,11 +5,11 @@
 This service returns a JSON object containing the information on the
 system being used to access the service.
 
-An instance of the service is available at https://headerparser-jm.herukoapp.com
+An instance of the service is available at https://headerparser-jm.herokuapp.com
 
 To use the service, use the URL,
 
-    https://headerparser-jm.herukoapp.com/api/client
+    https://headerparser-jm.herokuapp.com/api/client
 
 The result is a JSON message with the format
 
