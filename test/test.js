@@ -1,14 +1,14 @@
-const assert = require ('assert');
-const fetch = require ('node-fetch');
-const processCommand = require ('../lib/cmd').processCommand;
-const server = require ('../lib/server');
+import assert from 'assert';
+import fetch from 'node-fetch';
+import { processCommand } from '../lib/cmd.js';
+import { start, stop } from '../lib/server.js';
 
 before (async function () {
-  await server.start (3000);
+  await start (3000);
 });
 
 after (async function () {
-  await server.stop ();
+  await stop ();
 });
 
 describe ('test server', function () {

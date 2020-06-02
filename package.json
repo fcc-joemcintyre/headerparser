@@ -3,6 +3,7 @@
   "author": "Joe McIntyre (j_h_mcintyre@yahoo.com)",
   "description": "Request Header Parser Service",
   "version": "0.3.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/fcc-joemcintyre/headerparser"
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "test": "mocha ./test/test.js",
-    "start": "nodemon lib/main.js --port=3000"
+    "start": "nodemon lib/main.js --port=3000",
+    "lint": "eslint lib/** && eslint test/**"
   },
   "devDependencies": {
     "@cygns/eslint-config": "4.0.0",
@@ -21,12 +23,12 @@
     "eslint-plugin-import": "2.20.2",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "2.5.1",
-    "mocha": "7.1.2",
+    "mocha": "7.2.0",
     "node-fetch": "2.6.0",
     "nodemon": "2.0.4"
   },
   "engines": {
-    "node": "^14.2",
+    "node": "^12.17",
     "yarn": "^1.22"
   }
 }
