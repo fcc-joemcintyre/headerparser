@@ -1,12 +1,9 @@
 {
-  "extends": "@cygns",
+  "extends": "@cygns/eslint-config-node",
   "env": {
     "node": true
   },
   "rules": {
-    "no-console": "off",
-    "import/extensions": ["error", "always", {
-      "js": "always"
-    }]
+    "no-console": "off"
   }
 }

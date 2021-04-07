@@ -17,5 +17,37 @@ The result is a JSON message with the format
 
 If any elements are not available, null will be returned for those values.
 
+## Installation
+
+To use the application, first install the dependencies using npm.
+
+```
+npm ci
+```
+
+This will load the dependencies as defined in the *package-lock.json* file.
+
+## Scripts
+
+The following scripts are supported,
+
+```
+npm start
+```
+
+Run local instance of the server, serving requests at port 3000
+
+```
+npm test
+```
+
+Run test cases
+
+```
+npm run lint
+```
+
+Run lint against /src and /test directories
+
 ## License
 MIT
