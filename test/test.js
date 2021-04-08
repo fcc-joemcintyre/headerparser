@@ -86,28 +86,28 @@ describe ('cmd', function () {
   describe ('port out of range (negative)', function () {
     it ('should fail', function () {
       const cmd = processCommand (['-p=-1']);
-      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: '-1' });
+      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: 0 });
     });
   });
 
   describe ('port out of range (positive)', function () {
     it ('should fail', function () {
       const cmd = processCommand (['-p=200000']);
-      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: '200000' });
+      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: 0 });
     });
   });
 
   describe ('port not an integer', function () {
     it ('should fail', function () {
       const cmd = processCommand (['-p=2000.5']);
-      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: '2000.5' });
+      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: 0 });
     });
   });
 
   describe ('port not a number', function () {
     it ('should fail', function () {
       const cmd = processCommand (['-p=ABC']);
-      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: 'ABC' });
+      assert.deepStrictEqual (cmd, { code: 1, exit: true, port: 0 });
     });
   });
 
