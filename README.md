@@ -27,27 +27,35 @@ npm ci
 
 This will load the dependencies as defined in the *package-lock.json* file.
 
-## Scripts
+## Package Scripts
 
-The following scripts are supported,
+The following scripts are defined in this package
 
-```
-npm start
-```
-
-Run local instance of the server, serving requests at port 3000
+Run unit tests
 
 ```
 npm test
 ```
 
-Run test cases
+Start local server instance
+
+```
+npm start
+```
+
+Run ESLint against lib and test directories
 
 ```
 npm run lint
 ```
 
-Run lint against /src and /test directories
+Check types using Typescript compiler (type checking mode only). Note, this will
+use the globally installed Typescript package. If not installed, it can be installed
+using: *npm i -g typescript*
+
+```
+npm run typecheck
+```
 
 ## License
 MIT
