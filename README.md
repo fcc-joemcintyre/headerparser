@@ -1,7 +1,5 @@
 # Request Header Parser Service
 
-[![Build Status](https://travis-ci.org/fcc-joemcintyre/headerparser.svg?branch=master)](https://travis-ci.org/fcc-joemcintyre/headerparser)
-
 This service returns a JSON object containing the information on the
 system being used to access the service.
 
