@@ -3,14 +3,13 @@ import http from 'http';
 import { homepage } from './homepage.js';
 import { init } from './routes.js';
 
-let server;
+let server: http.Server;
 
 /**
  * Start the server.
- * @param {number} port HTTP port to listen to
- * @returns {void}
+ * @param port HTTP port to listen to
  */
-export function start (port) {
+export function start (port: number) {
   console.log ('Starting Parsing server');
 
   // initialize and start server
@@ -26,7 +25,6 @@ export function start (port) {
 
 /**
  * Stop the server
- * @returns {Promise<void>}
  */
 export async function stop () {
   if (server) {

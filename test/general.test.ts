@@ -1,7 +1,7 @@
 import assert from 'assert';
 import fetch from 'node-fetch';
-import { processCommand } from '../lib/cmd.js';
-import { start, stop } from '../lib/server.js';
+import { processCommand } from '../src/cmd.js';
+import { start, stop } from '../src/server.js';
 
 before (async function () {
   await start (3000);
@@ -41,7 +41,7 @@ describe ('test server', function () {
       const res = await fetch ('http://localhost:3000/api/client');
       if (res.status === 200) {
         try {
-          const body = await res.json ();
+          const body = await res.json () as { ip: string, os: string };
           assert (typeof (body.ip) === 'string');
           assert (typeof (body.os) === 'string');
         } catch (e) {

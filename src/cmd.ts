@@ -1,18 +1,22 @@
-/**
-  @typedef {object} CommandResult
-  @property {number} code Error code (0 if no error)
-  @property {boolean} exit Flag, exit or not
-  @property {number} port Port number
- */
+export type CommandResult = {
+  code: number,
+  exit: boolean,
+  port: number,
+}
+
+type Options = {
+  p?: string,
+  h?: boolean,
+};
 
 /**
  * Valid command options
  *  [-p | --port] port to listen on, default 3000
- * @param {string[]} args Array of arguments
- * @returns {CommandResult} Command parsing result
+ * @param args Array of arguments
+ * @returns Command parsing result
  */
-export function processCommand (args) {
-  const values = {};
+export function processCommand (args: string[]): CommandResult {
+  const values: Options = {};
   const errors = [];
 
   for (const arg of args) {
@@ -59,7 +63,7 @@ export function processCommand (args) {
   // if help argument or errors, output usage message
   if (values.h || (errors.length > 0)) {
     console.log (
-      `Usage: node pollster.js [-p=port] [-h]
+      `Usage: node lib/main.js [-p=port] [-h]
     -p or --port      Port number to listen on. Default: 3000
     -h or --help      This message.`
     );

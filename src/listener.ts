@@ -1,15 +1,11 @@
-/**
-  @typedef {import ('express').Request} Request
-  @typedef {import ('express').Response} Response
- */
+import { Request, Response } from 'express';
 
 /**
  * Return the parsed header object for a request.
- * @param {Request} req HTTP request
- * @param {Response} res HTTP response
- * @returns {void}
+ * @param req HTTP request
+ * @param res HTTP response
  */
-export function client (req, res) {
+export function client (req: Request, res: Response) {
   // get IP address from header (first entry), or IP stack objects
   let ip;
   const header = req.headers['x-forwarded-for'];
