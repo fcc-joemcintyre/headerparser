@@ -1,58 +1,5 @@
 import assert from 'assert';
-import fetch from 'node-fetch';
 import { processCommand } from '../src/cmd.js';
-import { start, stop } from '../src/server.js';
-
-before (async function () {
-  await start (3000);
-});
-
-after (async function () {
-  await stop ();
-});
-
-describe ('test server', function () {
-  describe ('/', function () {
-    it ('should return 200 with home page', async function () {
-      const res = await fetch ('http://localhost:3000/');
-      if (res.status === 200) {
-        const body = await res.text ();
-        assert (body.startsWith ('<h1>Request Header Parser Service</h1>'));
-      } else {
-        assert (false);
-      }
-    });
-  });
-
-  describe ('invalid URL content', function () {
-    it ('should return 200 with home page', async function () {
-      const res = await fetch ('http://localhost:3000/dummy');
-      if (res.status === 200) {
-        const body = await res.text ();
-        assert (body.startsWith ('<h1>Request Header Parser Service</h1>'));
-      } else {
-        assert (false);
-      }
-    });
-  });
-
-  describe ('valid request', function () {
-    it ('should return JSON object with header information', async function () {
-      const res = await fetch ('http://localhost:3000/api/client');
-      if (res.status === 200) {
-        try {
-          const body = await res.json () as { ip: string, os: string };
-          assert (typeof (body.ip) === 'string');
-          assert (typeof (body.os) === 'string');
-        } catch (e) {
-          assert (false);
-        }
-      } else {
-        assert (false);
-      }
-    });
-  });
-});
 
 describe ('cmd', function () {
   describe ('empty command', function () {
