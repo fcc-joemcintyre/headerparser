@@ -3,11 +3,11 @@
 This service returns a JSON object containing the information on the
 system being used to access the service.
 
-An instance of the service is available at https://headerparser-jm.herokuapp.com
+An instance of the service is available at https://headerparser-jm.onrender.com
 
 To use the service, use the URL,
 
-    https://headerparser-jm.herokuapp.com/api/client
+    https://headerparser-jm.onrender.com/api/client
 
 The result is a JSON message with the format
 
@@ -29,10 +29,34 @@ This will load the dependencies as defined in the *package-lock.json* file.
 
 The following scripts are defined in this package
 
+*Development Build and Run (use in separate terminals)*
+
+```
+npm run dev:build
+```
+
+```
+npm run dev:start
+```
+
+*Production Build and Run*
+
 Build
 
 ```
 npm run build
+```
+
+```
+npm run start
+```
+
+*Other commands*
+
+Run ESLint against lib and test directories
+
+```
+npm run lint
 ```
 
 Typecheck
@@ -45,18 +69,6 @@ Run unit tests
 
 ```
 npm test
-```
-
-Start local server instance
-
-```
-npm start
-```
-
-Run ESLint against lib and test directories
-
-```
-npm run lint
 ```
 
 ## License
